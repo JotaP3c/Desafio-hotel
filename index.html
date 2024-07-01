@@ -1,0 +1,72 @@
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Check-in de Hóspedes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Check-in de Hóspedes</h1>
+
+    <div id="formulario">
+      <h2>Cadastrar Pessoa</h2>
+      <input type="text" id="nome" placeholder="Nome">
+      <input type="text" id="documento" placeholder="Documento">
+      <input type="text" id="telefone" placeholder="Telefone">
+      <input type="date" id="dataEntrada" placeholder="Selecione a data de entrada">
+      <input type="date" id="dataSaida" placeholder="Selecione a data de saída">
+      <label for="adicionalVeiculo">Precisa de Garagem ?</label>
+      <input type="checkbox" id="adicionalVeiculo">
+      <button class="button-form" onclick="adicionarCheckin()">Cadastrar</button>
+    </div>
+
+    <hr>
+
+    <div id="formularioEditar" style="display: none;">
+      <h2>Editar Pessoa</h2>
+      <input type="text" id="editNome" placeholder="Nome">
+      <input type="text" id="editDocumento" placeholder="Documento">
+      <input type="text" id="editTelefone" placeholder="Telefone">
+      <input type="date" id="editDataEntrada" placeholder="Selecione a nova data de entrada">
+      <input type="date" id="editDataSaida" placeholder="Selecione a nova data de saída">
+      <label for="editAdicionalVeiculo">Precisa de Garagem ?</label>
+      <input type="checkbox" id="editAdicionalVeiculo">
+      <button class="button-form" onclick="salvarEdicao()">Salvar</button>
+      <button class="button-form" onclick="cancelarEdicao()">Cancelar</button>
+    </div>
+
+    <hr>
+
+    <div id="listaPessoas">
+      <h2>Lista de Pessoas</h2>
+      <input type="text" id="buscarNome" placeholder="Buscar por nome">
+      <input type="text" id="buscarDocumento" placeholder="Buscar por documento">
+      <button class="button-form" onclick="buscarPessoa()">Buscar</button>
+      <ul id="lista">
+      </ul>
+    </div>
+
+    <hr>
+    <input type="hidden" id="editIndex">
+
+    <div id="consultas">
+      <h2>Consultas</h2>
+      <button class="button-form" onclick="listarPessoasNoHotel()">Pessoas no Hotel</button>
+      <ul id="pessoasNoHotel">
+      </ul>
+      <button class="button-form" onclick="listarPessoasForaDoHotel()">Pessoas fora do Hotel</button>
+      <ul id="pessoasForaDoHotel">
+      </ul>
+    </div>
+
+    <div id="pessoasArquivadas">
+      <h2>Arquivos</h2>
+      <button class="button-form" onclick="listarPessoasArquivadas()">Pessoas Arquivadas no Hotel</button>
+      <ul id="pessoasArquivadasNoHotel">
+      </ul>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
